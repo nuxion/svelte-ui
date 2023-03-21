@@ -1,6 +1,6 @@
 {
   "name": "@algorinfo/svelte-ui",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "type": "module",
   "publishConfig": {
@@ -51,6 +51,9 @@
       "require": "./dist/svelte-ui.umd.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "svelte",
     "ui"
