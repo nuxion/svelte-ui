@@ -1,11 +1,13 @@
 <script>
-  export let actionFn = ()=> alert('clicked');
-  function handleClick(){
-    actionFn()
-  }
+  import {createEventDispatcher} from 'svelte';
+  export let extraClass = "btn-primary"
+  const dispatch = createEventDispatcher();
 
+  const onAction = () => {
+    dispatch('action');
+  };
 </script>
 
-<button on:click={handleClick}>
+<button class="btn {extraClass}" on:click={onAction} >
   <slot>Default</slot>
 </button>

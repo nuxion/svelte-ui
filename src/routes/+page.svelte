@@ -2,6 +2,7 @@
   import Button from "$lib/Button.svelte";
   import Card from "$lib/Card.svelte";
   import ImageLoader from "$lib/ImageLoader.svelte";
+  import Card2 from "$lib/Card2.svelte";
   function handleClick() {
     alert('clicked +page.svelte')
   }
@@ -11,52 +12,24 @@
 
 </script>
 <div class="p-5">
-
 <h1>Welcome to your Svelte-UI library</h1>
-
-<div class="flex flex-col">
+<div class="flex flex-col m-5">
   <h2>Button:</h2>
   <div>
-    <Button actionFn={handleClick}>Example</Button>
+    <Button on:action={handleClick} extraClass="">Neutral</Button>
+    <Button on:action={handleClick}>Primary</Button>
+    <Button on:action={handleClick} extraClass="btn-secondary">Secondary</Button>
+    <Button on:action={handleClick} extraClass="btn-accent">Accent</Button>
   </div>
 </div>
 
-<div class="flex flex-col">
-  <h2>Card:</h2>
+<div class="flex flex-col m-5">
+  <h2>Card2:</h2>
   <div>
-    <Card image={false}>
-      <span slot="title">Example</span>
-      <span slot="text">Text card example</span>
-    </Card>
+    <Card2>
+      <ImageLoader src="{defualtImg}" alt="nature" slot="image"></ImageLoader>
+    </Card2>
   </div>
 </div>
-
-<div class="flex flex-col">
-  <h2>Card 2:</h2>
-  <div>
-    <Card image={true}>
-    <ImageLoader src="{defualtImg}" alt="nature" slot="image"></ImageLoader>
-    </Card>
-  </div>
 </div>
 
-<div class="flex flex-col">
-  <h2>Card 3:</h2>
-  <div>
-    <Card image={true}>
-    <ImageLoader src="{bigCat}" alt="nature" slot="image"></ImageLoader>
-    </Card>
-  </div>
-</div>
-<!--
-
-<div class="flex flex-col">
-  <h2>ImageLoader:</h2>
-  <div>
-    <ImageLoader src="{defualtImg}" alt="nature"></ImageLoader>
-
-  </div>
-</div>
-
--->
-</div>
